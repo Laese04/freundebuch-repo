@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Freundebuch // Töbi, Schelbi &amp; Finch</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛸</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grid-overlay" aria-hidden="true"></div>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-emoji">🛸</div>
+      <h1>Freundebuch</h1>
+      <p class="hero-residents">
+        <span>Töbi</span><span class="dot">•</span><span>Schelbi</span><span class="dot">•</span><span>Finch</span>
+      </p>
+      <p class="hero-subtitle">Schön, dass du da warst! Trag dich ein und hinterlass uns eine Erinnerung an deinen Besuch.</p>
+    </header>
+
+    <section class="card form-card">
+      <h2>Neuer Eintrag</h2>
+      <form id="entry-form" novalidate>
+        <div class="field">
+          <label for="name-input">Dein Name</label>
+          <input id="name-input" name="name" type="text" placeholder="z. B. Anna" maxlength="100" required />
+        </div>
+
+        <div class="field">
+          <label for="photo-input">Foto (optional)</label>
+          <input id="photo-input" name="photoFile" type="file" accept="image/*" capture="environment" />
+          <img id="photo-preview" alt="Vorschau" hidden />
+        </div>
+
+        <div class="field">
+          <label for="message-input">Deine Nachricht</label>
+          <textarea id="message-input" name="message" rows="4" maxlength="2000" placeholder="Wie war dein Aufenthalt bei uns?"></textarea>
+        </div>
+
+        <!-- Honeypot field, hidden from real visitors -->
+        <div class="field honeypot" aria-hidden="true">
+          <label for="website-input">Website</label>
+          <input id="website-input" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <button id="submit-btn" type="submit">Eintragen</button>
+        <p id="form-status" class="status" role="status"></p>
+      </form>
+    </section>
+
+    <section class="entries-section">
+      <h2>Bisherige Einträge</h2>
+      <div id="entries-list" class="entries-list">
+        <p class="muted">Lade Einträge…</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
