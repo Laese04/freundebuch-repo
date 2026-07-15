@@ -3,21 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>Freundebuch // Töbi, Schelbi &amp; Finch</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛸</text></svg>" />
+  <title>WG-Buech // Töbi, Schelbi &amp; Finch</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%2315161a%22/><text x=%2250%22 y=%2264%22 text-anchor=%22middle%22 font-family=%22Arial Black%22 font-size=%2236%22 fill=%22%23ff6a3d%22>TSF</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="grid-overlay" aria-hidden="true"></div>
   <div class="page">
     <header class="hero">
-      <div class="hero-emoji">🛸</div>
-      <h1>Freundebuch</h1>
+      <div class="crest" aria-hidden="true">
+        <svg viewBox="0 0 120 120" width="92" height="92">
+          <circle cx="60" cy="60" r="57" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+          <circle cx="60" cy="60" r="48" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.45" />
+          <text x="60" y="72" text-anchor="middle" font-family="'Archivo Black', sans-serif" font-size="30" fill="var(--ink)">TSF</text>
+        </svg>
+      </div>
+      <h1>WG-Buech</h1>
       <p class="hero-residents">
-        <span>Töbi</span><span class="dot">•</span><span>Schelbi</span><span class="dot">•</span><span>Finch</span>
+        <span>Töbi</span><span class="dot">/</span><span>Schelbi</span><span class="dot">/</span><span>Finch</span>
       </p>
       <p class="hero-subtitle">Schön, dass du da warst! Trag dich ein und hinterlass uns eine Erinnerung an deinen Besuch.</p>
     </header>
@@ -38,7 +43,7 @@
 
         <div class="field">
           <label for="message-input">Deine Nachricht</label>
-          <textarea id="message-input" name="message" rows="4" maxlength="2000" placeholder="Wie war dein Aufenthalt bei uns?"></textarea>
+          <textarea id="message-input" name="message" rows="4" maxlength="2000" placeholder="Hinterlass uns ein paar Zeilen, einen Spruch oder ein Kompliment ✌️"></textarea>
         </div>
 
         <!-- Honeypot field, hidden from real visitors -->

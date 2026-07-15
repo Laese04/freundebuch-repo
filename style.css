@@ -1,17 +1,18 @@
 :root {
-  --bg: #070a14;
-  --bg-2: #0c1120;
-  --card-bg: rgba(18, 24, 41, 0.65);
-  --card-bg-solid: #121829;
-  --ink: #e7edf9;
-  --muted: #8b97b3;
-  --accent: #00e5ff;
-  --accent-2: #a855f7;
-  --accent-soft: rgba(0, 229, 255, 0.12);
-  --border: rgba(0, 229, 255, 0.22);
-  --success: #34e2a0;
-  --error: #ff5c7a;
-  --radius: 16px;
+  --bg: #15161a;
+  --card-bg: #1d1f25;
+  --ink: #f2ede4;
+  --muted: #8f8d8a;
+  --accent: #ff6a3d;
+  --accent-dark: #e04e22;
+  --accent-soft: rgba(255, 106, 61, 0.18);
+  --border: #2b2d34;
+  --success: #7cc576;
+  --error: #ff5c5c;
+  --radius: 10px;
+  --paper: #f4ecd8;
+  --paper-ink: #2e2418;
+  --paper-muted: #8c7a5e;
 }
 
 * {
@@ -20,102 +21,78 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at 15% 0%, rgba(168, 85, 247, 0.22), transparent 45%),
-    radial-gradient(circle at 85% 15%, rgba(0, 229, 255, 0.18), transparent 40%),
-    radial-gradient(circle at 50% 100%, rgba(0, 229, 255, 0.1), transparent 50%),
-    var(--bg);
+  background: var(--bg);
   color: var(--ink);
-  font-family: "Rajdhani", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Barlow Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.08rem;
   line-height: 1.5;
-  position: relative;
-}
-
-.grid-overlay {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image:
-    linear-gradient(rgba(0, 229, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
 }
 
 .page {
-  position: relative;
-  z-index: 1;
-  max-width: 640px;
+  max-width: 620px;
   margin: 0 auto;
-  padding: 24px 16px 64px;
+  padding: 32px 16px 64px;
 }
 
 .hero {
   text-align: center;
-  padding: 32px 8px 8px;
+  padding: 12px 8px 8px;
 }
 
-.hero-emoji {
-  font-size: 2.75rem;
-  margin-bottom: 8px;
-  filter: drop-shadow(0 0 14px rgba(0, 229, 255, 0.6));
+.crest {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .hero h1 {
-  font-family: "Orbitron", "Rajdhani", sans-serif;
-  font-weight: 800;
-  font-size: 2rem;
-  letter-spacing: 0.06em;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-size: 2.3rem;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
-  margin: 0 0 12px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  margin: 6px 0 10px;
+  color: var(--ink);
 }
 
 .hero-residents {
   margin: 0 0 14px;
-  font-family: "Orbitron", sans-serif;
-  font-size: 0.95rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.15rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
-  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
 }
 
 .hero-residents .dot {
-  color: var(--accent-2);
-  margin: 0 10px;
-  text-shadow: 0 0 10px rgba(168, 85, 247, 0.7);
+  color: var(--muted);
+  margin: 0 8px;
 }
 
 .hero-subtitle {
   color: var(--muted);
   margin: 0 auto;
-  max-width: 46ch;
-  font-size: 1.05rem;
+  max-width: 42ch;
+  font-size: 1.1rem;
 }
 
 .card {
   background: var(--card-bg);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
   border-radius: var(--radius);
-  padding: 20px;
+  padding: 22px 20px;
   margin-top: 24px;
-  box-shadow: 0 0 0 1px rgba(0, 229, 255, 0.04), 0 12px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .card h2 {
   margin-top: 0;
-  font-family: "Orbitron", sans-serif;
-  font-size: 1.05rem;
-  letter-spacing: 0.06em;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--ink);
 }
@@ -129,26 +106,27 @@ body {
 
 .field label {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   letter-spacing: 0.03em;
   color: var(--muted);
+  text-transform: uppercase;
 }
 
 .field input[type="text"],
 .field textarea {
   font: inherit;
-  font-size: 1rem;
-  padding: 10px 12px;
+  font-size: 1.05rem;
+  padding: 11px 14px;
   border: 1px solid var(--border);
-  border-radius: 10px;
-  background: rgba(7, 10, 20, 0.6);
+  border-radius: 6px;
+  background: var(--bg);
   color: var(--ink);
   resize: vertical;
 }
 
 .field input[type="text"]::placeholder,
 .field textarea::placeholder {
-  color: rgba(139, 151, 179, 0.7);
+  color: var(--muted);
 }
 
 .field input[type="text"]:focus,
@@ -167,7 +145,7 @@ body {
   margin-top: 8px;
   max-width: 100%;
   max-height: 260px;
-  border-radius: 10px;
+  border-radius: 6px;
   border: 1px solid var(--border);
   object-fit: cover;
 }
@@ -183,36 +161,34 @@ body {
 button#submit-btn {
   width: 100%;
   padding: 13px 16px;
-  font-family: "Orbitron", sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #04121a;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #17181c;
+  background: var(--accent);
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  transition: background 0.15s ease, transform 0.15s ease;
 }
 
 button#submit-btn:hover {
-  box-shadow: 0 0 28px rgba(0, 229, 255, 0.55), 0 0 28px rgba(168, 85, 247, 0.35);
+  background: #ff8158;
   transform: translateY(-1px);
 }
 
 button#submit-btn:disabled {
   opacity: 0.6;
   cursor: default;
-  box-shadow: none;
   transform: none;
 }
 
 .status {
   min-height: 1.2em;
   margin: 12px 0 0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .status.success {
@@ -228,9 +204,10 @@ button#submit-btn:disabled {
 }
 
 .entries-section h2 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 1.05rem;
-  letter-spacing: 0.06em;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 14px;
   color: var(--ink);
@@ -239,35 +216,59 @@ button#submit-btn:disabled {
 .entries-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  gap: 30px;
+  padding-top: 8px;
 }
 
 .entry-card {
-  background: var(--card-bg);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 0 0 1px rgba(0, 229, 255, 0.04), 0 12px 30px rgba(0, 0, 0, 0.35);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  background: var(--paper);
+  padding: 12px 12px 10px;
+  border-radius: 2px;
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.45), 0 2px 5px rgba(0, 0, 0, 0.35);
+  transform: rotate(-2deg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.entry-card:nth-child(3n+2) {
+  transform: rotate(1.75deg);
+}
+
+.entry-card:nth-child(3n) {
+  transform: rotate(-0.75deg);
 }
 
 .entry-card:hover {
-  border-color: rgba(0, 229, 255, 0.5);
-  box-shadow: 0 0 0 1px rgba(0, 229, 255, 0.15), 0 12px 30px rgba(0, 0, 0, 0.4);
+  transform: rotate(0deg) scale(1.03);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+
+.entry-card::before {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  width: 64px;
+  height: 24px;
+  background: linear-gradient(180deg, rgba(255, 138, 97, 0.85), rgba(255, 106, 61, 0.7));
+  transform: translateX(-50%) rotate(-4deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .entry-photo {
   display: block;
   width: 100%;
-  max-height: 380px;
+  height: 260px;
   object-fit: cover;
-  border-bottom: 1px solid var(--border);
+  border-radius: 1px;
 }
 
 .entry-body {
-  padding: 14px 16px;
+  padding: 12px 6px 4px;
 }
 
 .entry-header {
@@ -279,22 +280,27 @@ button#submit-btn:disabled {
 }
 
 .entry-name {
-  font-family: "Orbitron", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--accent);
+  font-family: "Caveat", cursive;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--paper-ink);
 }
 
 .entry-date {
+  font-family: "Barlow Condensed", sans-serif;
   font-size: 0.8rem;
-  color: var(--muted);
+  letter-spacing: 0.03em;
+  color: var(--paper-muted);
 }
 
 .entry-message {
-  margin: 8px 0 0;
+  margin: 6px 0 4px;
   white-space: pre-wrap;
   word-break: break-word;
-  color: var(--ink);
+  font-family: "Caveat", cursive;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  color: var(--paper-ink);
 }
 
 .muted {
