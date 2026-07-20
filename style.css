@@ -39,10 +39,47 @@ body {
   padding: 12px 8px 8px;
 }
 
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 12px;
+}
+
 .crest {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+}
+
+.hero-photo {
+  position: relative;
+  flex-shrink: 0;
+  background: var(--paper);
+  padding: 6px 6px 16px;
+  border-radius: 2px;
+  transform: rotate(-7deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45), 0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 52px;
+  height: 22px;
+  background: linear-gradient(180deg, rgba(255, 138, 97, 0.85), rgba(255, 106, 61, 0.7));
+  transform: translateX(-50%) rotate(-5deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-photo img {
+  display: block;
+  width: 92px;
+  height: 92px;
+  object-fit: cover;
+  border-radius: 1px;
 }
 
 .hero h1 {
